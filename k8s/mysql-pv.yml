@@ -4,10 +4,14 @@ metadata:
   name: mysql-pv
 spec:
   capacity:
-    storage: 256Mi
-  volumeMode: Filesystem
+    storage: 2Gi
+
   accessModes:
     - ReadWriteOnce
+
   persistentVolumeReclaimPolicy: Retain
+
+  storageClassName: manual
+
   hostPath:
-    path: /home/ubuntu/two-tier-flask-app/mysqldata        #This is your host path where your data will be stored. Make sure to create mysqldata directory in mentioned path
+    path: /home/ubuntu/two-tier-flask-app/mysqldata
